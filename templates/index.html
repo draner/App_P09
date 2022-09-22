@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Recommander un article à un utilisateur</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+
+    <body>
+        <img src="https://user.oc-static.com/upload/2019/10/24/15719078448088_Capture%20d%E2%80%99e%CC%81cran%202019-10-24%20a%CC%80%2010.50.32.png">
+        <br>
+            <p>Client_id (between 0 and 322896)</p>
+            <br>
+                <table><form action="predicted" method="POST">
+                  <td>
+                  <label>User_id :</label>
+                  <input type="number" id="client_id" name="client_id"
+                  min="0" max="322896">
+                      </td>
+                    <td>
+                      <input class="button1" type="submit" value="client_id">
+                    </td>
+                </form></table>
+            <br>
+
+    <br>
+    <p>Résultats de la prédiction :</p>
+    {% for message in get_flashed_messages() %}
+      {{ message | safe }}
+    {% endfor %}
+    </body>
+</html>
